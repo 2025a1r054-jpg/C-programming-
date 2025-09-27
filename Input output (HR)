@@ -7,3 +7,4 @@ int main(){
     scanf("%c  %d %f %lf",&ch,&i,&f,&d);
     printf("%c  %d %.2f %.6lf",ch,i,f,d);
     return 0;
+}
