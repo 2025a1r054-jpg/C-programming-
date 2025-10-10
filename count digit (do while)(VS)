@@ -1,0 +1,24 @@
+ #include <stdio.h>
+int main(){
+  char ch;
+  do
+  {
+    int num;
+    int count = 0;
+    printf("Enter number: ");
+    scanf("%d", &num);
+    if (num == 0){
+      printf("Number of digits are 1\n");
+    }
+    else{
+      while(num != 0){
+        num = num/10;
+        count++;
+      }
+      printf("Number of digits are %d\n", count);
+    }
+    printf("Do you want to continue again? (y/n)\n");
+    scanf(" %c", &ch);
+  } while(ch == 'y' || ch == 'Y');
+  return 0;
+}
