@@ -1,0 +1,27 @@
+#include<stdio.h>
+int main(){
+    int r,c;
+    scanf("%d%d",&r,&c);
+    int arr[r][c];
+    for(int row=0;row<r;row++){
+        for(int col=0;col<c;col++){
+            scanf("%d",&arr[row][col]);
+        }
+    }
+    for(int row=0;row<r;row++){
+        int row_sum=0;
+        for(int col=0;col<c;col++){
+            row_sum +=arr[row][col];
+        }
+        printf("%d\n",row_sum);
+    }
+    for(int col=0;col<c;col++){
+        int col_sum=0;
+        for(int row=0;row<r;row++){
+            col_sum +=arr[row][col];
+        }
+        printf("%d\n",col_sum);
+
+    }
+    return 0;
+}
