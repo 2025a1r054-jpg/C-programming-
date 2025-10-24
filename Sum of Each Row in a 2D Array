@@ -1,0 +1,20 @@
+#include<stdio.h>
+int main(){
+    int r,c;
+    scanf("%d%d",&r,&c);
+    int arr[r][c];
+    for(int row=0;row<r;row++){
+        for(int col=0;col<c;col++){
+            scanf("%d",&arr[row][col]);
+        }
+    }
+    for(int row=0;row<r;row++){
+        int sum=0;
+        for(int col=0;col<c;col++){
+            sum +=arr[row][col];
+        }
+        printf("%d\n",sum);
+
+    }
+    return 0;
+}
