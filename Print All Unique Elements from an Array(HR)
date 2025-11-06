@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int N;
+    scanf("%d", &N);
+
+    int *arr = (int *)malloc(N * sizeof(int));
+    if (arr == NULL) {
+        return 1; 
+    }
+
+    for (int i = 0; i < N; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    int *unique_elements = (int *)malloc(N * sizeof(int));
+    if (unique_elements == NULL) {
+        free(arr);
+        return 1;
+    }
+    int unique_count = 0;
+    int found_unique = 0;
+
+    for (int i = 0; i < N; i++) {
+        int current_element = arr[i];
+        int count = 0;
+        for (int j = 0; j < N; j++) {
+            if (arr[j] == current_element) {
+                count++;
+            }
+        }
+        if (count == 1) {
+            unique_elements[unique_count++] = current_element;
+            found_unique = 1;
+        }
+    }
+
+    if (found_unique) {
+        for (int i = 0; i < unique_count; i++) {
+            printf("%d ", unique_elements[i]);
+        }
+        printf("\n");
+    } else {
+        printf("No unique elements\n");
+    }
+
+    free(arr);
+    free(unique_elements);
+    return 0;
+}
